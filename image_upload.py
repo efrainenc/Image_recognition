@@ -1,4 +1,5 @@
 import json
+import uuid
 import streamlit as st
 import pandas as pd
 from snowflake.snowpark import Session

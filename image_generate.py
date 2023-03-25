@@ -8,6 +8,17 @@ import pandas as pd
 from snowflake.snowpark.session import Session
 
 
+# Function that create's a new or get existing Snowpark session
+def create_session():
+    if "snowpark_session" not in st.session_state:
+        session = Session.builder.configs(json.load(open("connection.json"))).create()
+        st.session_state['snowpark_session'] = session
+    else:
+        session = st.session_state['snowpark_session']
+    return session
+
+# Calling the Snowpark session function
+session = create_session()
 
 # Retrieve OpenAI key from environment variable
 openai.api_key = os.getenv("OPENAI_API_KEY")

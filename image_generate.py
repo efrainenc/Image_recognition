@@ -10,12 +10,12 @@ from snowflake.snowpark.session import Session
 
 # Function that create's a new or get existing Snowpark session
 def create_session():
-    if "snowpark_session" not in st.session_state:
-        session = Session.builder.configs(json.load(open("connection.json"))).create()
-        st.session_state['snowpark_session'] = session
-    else:
-        session = st.session_state['snowpark_session']
-    return session
+   if "snowpark_session" not in st.session_state:
+      session = Session.builder.configs(json.load(open("connection.json"))).create()
+      st.session_state['snowpark_session'] = session
+   else:
+      session = st.session_state['snowpark_session']
+   return session
 
 # Calling the Snowpark session function
 session = create_session()
@@ -34,17 +34,17 @@ if text_input:
    )
 
   # Convert image base64 string into hex
-  image_bytes = response['data'][0]['b64_json']
-  bytes_data_in_hex = base64.b64decode(image_bytes).hex()
+   image_bytes = response['data'][0]['b64_json']
+   bytes_data_in_hex = base64.b64decode(image_bytes).hex()
 
   # Generate new image file name
-  file_name = 'img_' + str(uuid.uuid4())
+   file_name = 'img_' + str(uuid.uuid4())
 
   # Decode base64 image data and generate image file that can be used to display on screen 
-  decoded_data = base64.b64decode((image_bytes))
-  with open(file_name, 'wb') as f:
-    f.write(decoded_data)
+   decoded_data = base64.b64decode((image_bytes))
+   with open(file_name, 'wb') as f:
+      f.write(decoded_data)
 
   # Write image data in Snowflake table
-  df = pd.DataFrame({"FILE_NAME": [file_name], "IMAGE_BYTES": [bytes_data_in_hex]})
-  session.write_pandas(df, "IMAGES")
+   df = pd.DataFrame({"FILE_NAME": [file_name], "IMAGE_BYTES": [bytes_data_in_hex]})
+   session.write_pandas(df, "IMAGES")

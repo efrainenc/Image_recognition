@@ -2,7 +2,7 @@ import json
 import uuid
 import streamlit as st
 import pandas as pd
-from snowflake.snowpark import Session
+from snowflake.snowpark.session import Session
 
 # Function that create's a new or get existing Snowpark session
 def create_session():

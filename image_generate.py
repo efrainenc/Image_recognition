@@ -24,7 +24,7 @@ session = create_session()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Add text box for entering text
-text_input = st.text_input("Enter description of your favorite TV show character 👇")
+text_input = st.text_input("Enter description of your favorite animal 👇")
 if text_input:
    response = openai.Image.create(
       prompt=text_input,

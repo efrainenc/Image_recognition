@@ -5,7 +5,7 @@ This is an image recognition app that utilizes the Snowflake Snowpark, PyTorch, 
 2. Generate an image of a given animal when its description is typed in.
 
 ## Installation
-First you must download miniconda here: https://conda.io/miniconda.html.
+First you must download miniconda here: https://conda.io/miniconda.html.<br>
 Once installed restart terminal and confirm installation with:
 ```
 conda --version
@@ -21,7 +21,7 @@ pip install uuid
 pip install streamlit
 ```
 
-This app also requires a Snowflake account with access to Snowpark. Follow the instructions in the Snowflake documentation to set up your Snowpark environment.
+This app also requires a Snowflake account with access to Snowpark. Follow the instructions in the Snowflake documentation to set up your Snowpark environment.<br>
 
 Create a new Database "IMAGE_RECOGNITION" and create a new SQL worksheet and add the following commands to setup a Snowflake table and internal stage:
 ```
@@ -29,7 +29,7 @@ create or replace table images (file_name string, image_bytes string);
 create or replace stage yourname_files;
 ```
 
-Then add a connection.json in your project repo with the following information:
+Then add a connection.json in your project repo with the following information:<br>
 (for "account" ensure you copy your account identifier and replace the '.' with '-' like so "ACCOUNT-IDENTIFIER")
 ```
 {
@@ -43,7 +43,7 @@ Then add a connection.json in your project repo with the following information:
 }
 ```
 
-Next ensure your snowpark-img-rec enviroment is active and run through each cell in "Snowpark_PyTorch_Image_Rec.ipynb" without errors.
+Next ensure your snowpark-img-rec enviroment is active and run through each cell in "Snowpark_PyTorch_Image_Rec.ipynb" without errors.<br>
 After that is all set and done create your .env file and insert your OpenAI API key like so:
 ```
 OPENAI_API_KEY=12345
@@ -51,7 +51,7 @@ OPENAI_API_KEY=12345
 then you are ready to start using the app!
 
 ## Usage
-To use the app, follow these steps:
+To use the app, follow these steps:<br>
 
 Start the Streamlit server by running the following command in your terminal:
 ```
@@ -75,5 +75,9 @@ This app was created using the following technologies:
 - Snowflake Snowpark
 
 ### Credits
-Snowflake
+Snowflake<br>
 NOTICE: This app does use pretrained models
+
+### Goals
+- Create single site interface for both applications
+- Train my own models

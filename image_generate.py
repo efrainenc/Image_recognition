@@ -21,7 +21,7 @@ def create_session():
 session = create_session()
 
 # Retrieve OpenAI key from environment variable
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY") # TODO INSERT OPENAI API KEY
 
 # Add text box for entering text
 text_input = st.text_input("Enter description of your favorite animal 👇")

@@ -7,9 +7,14 @@ This is an image recognition app that utilizes the Snowflake Snowpark, PyTorch, 
 ## Installation
 To install the required packages, run the following command:
 
-
-pip install openai uuid snowflake-connector-python streamlit requests snowflake-snowpark-python
-
+```
+conda create --name snowpark-img-rec -c https://repo.anaconda.com/pkgs/snowflake python=3.8
+conda activate snowpark-img-rec
+conda install -c https://repo.anaconda.com/pkgs/snowflake snowflake-snowpark-python pandas notebook cachetools
+pip install openai 
+pip install uuid 
+pip install streamlit
+```
 
 This app also requires a Snowflake account with access to Snowpark. Follow the instructions in the Snowflake documentation to set up your Snowpark environment.
 
@@ -17,7 +22,10 @@ This app also requires a Snowflake account with access to Snowpark. Follow the i
 To use the app, follow these steps:
 
 Start the Streamlit server by running the following command in your terminal:
-streamlit run image_upload.py OR image_generate.py
+```
+streamlit run image_upload.py
+streamlit run image_generate.py
+```
 
 Open the app in your browser by navigating to http://localhost:8501.
 

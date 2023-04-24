@@ -53,7 +53,7 @@ then you are ready to start using the app!
 ## Usage
 To use the app, follow these steps:<br>
 
-Start the Streamlit server by running the following command in your terminal:
+Start the Streamlit server by running the either of the following commands in your terminal:
 ```
 streamlit run image_upload.py
 streamlit run image_generate.py

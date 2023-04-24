@@ -43,7 +43,12 @@ Then add a connection.json in your project repo with the following information:
 }
 ```
 
-Next ensure your snowpark-img-rec enviroment is active and run through each cell in "Snowpark_PyTorch_Image_Rec.ipynb" without errors then you are ready to start using the app!
+Next ensure your snowpark-img-rec enviroment is active and run through each cell in "Snowpark_PyTorch_Image_Rec.ipynb" without errors.
+After that is all set and done create your .env file and insert your OpenAI API key like so:
+```
+OPENAI_API_KEY=12345
+```
+then you are ready to start using the app!
 
 ## Usage
 To use the app, follow these steps:
@@ -58,9 +63,9 @@ Open the app in your browser by navigating to http://localhost:8501.
 
 To detect what an uploaded image is showing, click on the "Upload Image" button and select an image from your computer. Click the "Submit" button to see the text description of the image.
 
-To generate an image of an animal, type the name of the animal into the input box and click the "Generate" button. The app will use OpenAI DALL-E 2 to generate an image of the animal and display it on the screen.
+To generate an image of an animal, type the description of the animal into the input box and click the "Generate" button. The app will use OpenAI DALL-E 2 to generate an image of the animal and display it on the screen.
 
-## Credits
+## Technologies
 This app was created using the following technologies:
 
 - Python
@@ -68,3 +73,7 @@ This app was created using the following technologies:
 - OpenAI DALL-E 2
 - Streamlit
 - Snowflake Snowpark
+
+### Credits
+Snowflake
+NOTICE: This app does use pretrained models

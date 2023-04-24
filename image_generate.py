@@ -6,6 +6,8 @@ import os
 import streamlit as st
 import pandas as pd
 from snowflake.snowpark.session import Session
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Function that create's a new or get existing Snowpark session
@@ -21,7 +23,7 @@ def create_session():
 session = create_session()
 
 # Retrieve OpenAI key from environment variable
-openai.api_key = os.getenv("OPENAI_API_KEY") # TODO INSERT OPENAI API KEY
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Add text box for entering text
 text_input = st.text_input("Enter description of your favorite animal 👇")
